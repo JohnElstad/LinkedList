@@ -24,5 +24,5 @@ Node::Node(Student* student){
   
 }
 Node::~Node(){
-
+  delete studentPtr;
 }

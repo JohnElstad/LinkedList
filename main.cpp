@@ -40,11 +40,39 @@ int main(){
       }
     }
     else if(strcmp(input,"DELETE")==0){
-      
+      Node* previous=NULL;
+      cout<<"What age of student do you want to delete?"<<endl;
+      int ageinput;
+      cin>>ageinput;
+      current = head;
+      while(current!=NULL){
+	if(ageinput==current->getStudent()->getAge()){
+	  if(previous==NULL){
+	    current=head;
+	    Node* temp;
+	    temp = current;
+	    current=current->getNext();
+	    delete temp;
+	  }
+	  else{
+	    previous->setNext(current->getNext());
+	    delete current;
+	    
+	  }
+	}
+	else{
+	  previous = current;
+	  current = current->getNext();
+	  
+	}
+      }
     }
     else if(strcmp(input,"QUIT")==0){
       cout<<"QUITTING"<<endl;
       running=false;
+    }
+    else{
+      cout<<"PRINTALL DELETE ADD QUIT"<<endl;
     }
   }
 }
