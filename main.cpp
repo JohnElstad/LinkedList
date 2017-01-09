@@ -3,7 +3,7 @@
 #include "Student.h"
 
 using namespace std;
-
+//John Elstad- This is a linked List program- 1/6/17
 int main(){
 
   cout<<"Linked List"<<endl;
